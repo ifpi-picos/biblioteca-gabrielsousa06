@@ -1,4 +1,8 @@
+import dominio.Emprestimo;
 import dominio.Livro;
+import dominio.Usuario;
+import java.time.LocalDate;
+
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -56,6 +60,53 @@ public class App {
     }
 
     private static void pegarLivroEmprestado(){
+        Scanner scanner = new Scanner(System.in);
+      
+
+        // procurar livro pelo nome
+        System.out.println("Digite o título do livro que deseja reservar: ");
+        String tituloLivroEmprestado = scanner.nextLine();
+
+
+        Livro livroEscolhido = null;
+        for(Livro livro : livros){
+            if(livro.getTitulo().equalsIgnoreCase(tituloLivroEmprestado)){
+                livroEscolhido = livro;
+                break;
+            };
+            
+        }
+
+        if(livroEscolhido == null){
+            System.out.println("Livro não encontrado!");
+        }
+
+        else if(!livroEscolhido.isDisponivel()){
+            System.out.println("O livro não está disponível!");
+        }
+        else{
+            // atributos do usuario
+            System.out.println("Digite seu CPF: ");
+            String usuarioCpf = scanner.nextLine();
+
+            System.out.println("Digite seu nome de usuário: ");
+            String usuarioName = scanner.nextLine();
+
+            System.out.println("Digite seu email: ");
+            String usuarioEmail = scanner.nextLine();
+
+            LocalDate dataLivroEmprestado = LocalDate.now();
+            LocalDate dataLivroDevolucao = dataLivroEmprestado.plusMonths(1);
+
+            livroEscolhido.setDisponivel(false);
+
+            Usuario usuario = new Usuario(usuarioName, usuarioCpf, usuarioEmail);
+            Emprestimo emprestimo = new Emprestimo(usuario, livroEscolhido,dataLivroEmprestado , dataLivroDevolucao);
+            System.out.println("Seu livro foi reservado! ");
+            System.out.println(emprestimo);
+        }
+
+    scanner.close();
 
     }
 }
