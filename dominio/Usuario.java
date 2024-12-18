@@ -1,4 +1,4 @@
-package biblioteca.dominio;
+package dominio;
 
 public class Usuario {
     private String usuario;

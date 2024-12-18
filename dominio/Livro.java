@@ -1,18 +1,18 @@
-package biblioteca.dominio;
+package dominio;
 
 public class Livro{
     private String titulo;
     private int ano;
     private String autor;
     private String editora;
-    private Boolean emprestado;
+    private Boolean disponivel;
     
-    public Livro(String titulo, int ano, String autor, String editora, Boolean emprestado){
+    public Livro(String titulo, int ano, String autor, String editora, Boolean disponivel){
         this.titulo = titulo;
         this.ano = ano;
         this.autor = autor;
         this.editora = editora;
-        this.emprestado = emprestado;
+        this.disponivel = disponivel;
     }
     
 
@@ -48,12 +48,22 @@ public class Livro{
         this.editora = editora;
     }
 
-    public Boolean getEmprestado() {
-        return emprestado;
+    public Boolean isDisponivel() {
+        return disponivel;
     }
 
-    public void setEmprestado(Boolean emprestado) {
-        this.emprestado = emprestado;
+    public void setDisponivel(Boolean disponivel) {
+        this.disponivel = disponivel;
+    }
+
+    public String toString(){
+        return "Livro{" +
+                "Título ='" + titulo + '\'' +
+                ", Autor ='" + autor + '\'' +
+                ", Ano de publicação ='" + ano + '\'' +
+                ", Editora =" + editora + '\'' +
+                ", Disponivel =" + disponivel +
+                '}';
     }
 }
 

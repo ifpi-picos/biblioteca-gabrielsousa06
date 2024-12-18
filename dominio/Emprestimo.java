@@ -1,4 +1,4 @@
-package biblioteca.dominio;
+package dominio;
 import java.time.LocalDate;
 
 public class Emprestimo {
