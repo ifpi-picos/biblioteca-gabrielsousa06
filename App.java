@@ -103,6 +103,7 @@ public class App {
             Usuario usuario = new Usuario(usuarioName, usuarioCpf, usuarioEmail);
             Emprestimo emprestimo = new Emprestimo(usuario, livroEscolhido,dataLivroEmprestado , dataLivroDevolucao);
             System.out.println("Seu livro foi reservado! ");
+            System.out.println("Oi");
             System.out.println(emprestimo);
         }
 
