@@ -97,4 +97,21 @@ public class LivroDao {
         }
         return null;
     }
+
+    public void atualizarLivro(Livro livro){
+        String sql = "UPDATE livro SET titulo = ? autor = ? editora = ? ano = ? emprestimo = ? WHERE id = ?";
+        try {
+            PreparedStatement stm = conexao.prepareStatement(sql);
+            stm.setString(1, livro.getTitulo());
+            stm.setString(2, livro.getAutor());
+            stm.setString(3, livro.getEditora());
+            stm.setInt(4, livro.getAno());
+            stm.setBoolean(5, livro.isEmprestimo());
+            stm.setInt(6, livro.getIdLivro());
+            stm.executeUpdate();
+
+        } catch (Exception e) {
+            System.out.println("Erro ao atualizar o livro" + e.getMessage());
+        }
+    }
 }
