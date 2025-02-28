@@ -15,6 +15,8 @@ public class Acoes {
     static List<Emprestimo> emprestimos = new ArrayList<>();
     static Notificacao notificacao = new NotificacaoEmail();
 
+
+
     public static void cadastrarLivro(){
         System.out.println("Digite o nome do livro: ");
         String nomeLivro = scanner.next();

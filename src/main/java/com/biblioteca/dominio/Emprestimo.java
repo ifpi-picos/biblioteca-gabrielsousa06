@@ -6,6 +6,7 @@ public class Emprestimo {
     private LocalDate dataEmprestimo = LocalDate.now();
     private Livro livroEmprestado;
     private Usuario usuarioRetirante;
+    
 
     public Emprestimo(Livro livroSolicitado, Usuario usuarioSolicitante) {
         this.livroEmprestado = livroSolicitado;

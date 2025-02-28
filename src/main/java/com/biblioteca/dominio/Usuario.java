@@ -4,17 +4,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Usuario {
+    private int idUsuario;
+    
     private String nome;
     private String cpf;
     private String email;
     private List<Livro> historicoEmprestimos = new ArrayList<>();
     
-        public Usuario(String nomeUsuario, String cpf, String email){
-            this.nome = nomeUsuario;
-            this.cpf = cpf;
-            this.email = email;
-        }
+    public Usuario(String nomeUsuario, String cpf, String email){
+        this.nome = nomeUsuario;
+        this.cpf = cpf;
+        this.email = email;
+    }
     
+        public int getIdUsuario() {
+            return idUsuario;
+        }
+
+        public void setIdUsuario(int idUsuario) {
+            this.idUsuario = idUsuario;
+        }
         public void exibirValoresUsuario() {
             System.out.printf("%nNome: %s %nCpf: %s %nEmail: %s %n", nome, cpf, email);
         }
